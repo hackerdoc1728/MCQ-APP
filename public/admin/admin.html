@@ -1,0 +1,230 @@
+﻿<!doctype html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width,initial-scale=1" />
+    <title>NeuroMCQ Admin</title>
+
+    <!-- Admin styles (served via CDN / R2) -->
+    <link rel="stylesheet"
+          href="https://cdn.benchtobedsideneuro.com/assets/css/admin.css" />
+</head>
+<body>
+    <!-- ================= HEADER ================= -->
+    <header class="header">
+        <div class="container header__row">
+            <div>
+                <div class="title">NeuroMCQ Admin</div>
+                <div class="subtitle">
+                    Sheets staging → Publish to Neon → Public API reads Neon → Redis caches
+                </div>
+            </div>
+
+            <div class="cfg">
+                <button id="pingBtn" class="btn btn--secondary">Ping API</button>
+                <span id="connPill" class="pill pill--warn">Not checked</span>
+            </div>
+        </div>
+    </header>
+
+    <!-- ================= MAIN ================= -->
+    <main class="container grid">
+        <!-- ===== LEFT: CREATE MCQ ===== -->
+        <section class="card">
+            <div class="card__title">Create MCQ (staging → Google Sheets)</div>
+
+            <div class="row">
+             
+                <div class="col">
+                    <label class="label">Author</label>
+                    <input id="author"
+                           class="input"
+                           type="text"
+                           value="Dr Ilaiyabharathi T" />
+                </div>
+            </div>
+
+            <label class="label">Stem text</label>
+            <textarea id="stem_text"
+                      class="input textarea"
+                      placeholder="Question stem..."></textarea>
+
+            <label class="label">Stem YouTube URL (optional)</label>
+            <input id="stem_video_url"
+                   class="input"
+                   type="url"
+                   placeholder="https://www.youtube.com/watch?v=..." />
+
+            <div class="row">
+                <div class="col">
+                    <label class="label">Option A</label>
+                    <input id="option_a_text" class="input" type="text" />
+                    <label class="label">Option A image (optional)</label>
+                    <input id="option_a_image" class="input file" type="file" accept="image/*" />
+                </div>
+
+                <div class="col">
+                    <label class="label">Option B</label>
+                    <input id="option_b_text" class="input" type="text" />
+                    <label class="label">Option B image (optional)</label>
+                    <input id="option_b_image" class="input file" type="file" accept="image/*" />
+                </div>
+            </div>
+
+            <div class="row">
+                <div class="col">
+                    <label class="label">Option C</label>
+                    <input id="option_c_text" class="input" type="text" />
+                    <label class="label">Option C image (optional)</label>
+                    <input id="option_c_image" class="input file" type="file" accept="image/*" />
+                </div>
+
+                <div class="col">
+                    <label class="label">Option D</label>
+                    <input id="option_d_text" class="input" type="text" />
+                    <label class="label">Option D image (optional)</label>
+                    <input id="option_d_image" class="input file" type="file" accept="image/*" />
+                </div>
+            </div>
+
+            <div class="row">
+                <div class="col">
+                    <label class="label">Correct option</label>
+                    <select id="correct_option" class="input">
+                        <option value="A">A</option>
+                        <option value="B">B</option>
+                        <option value="C">C</option>
+                        <option value="D">D</option>
+                    </select>
+                </div>
+
+                <div class="col">
+                    <label class="label">Stem image (optional)</label>
+                    <input id="stem_image" class="input file" type="file" accept="image/*" />
+                </div>
+            </div>
+
+            <label class="label">Explanation text</label>
+            <textarea id="explanation_text"
+                      class="input textarea"
+                      placeholder="Explanation..."></textarea>
+
+            <div class="row">
+                <div class="col">
+                    <label class="label">Explanation image (optional)</label>
+                    <input id="explanation_image"
+                           class="input file"
+                           type="file"
+                           accept="image/*" />
+                </div>
+
+                <div class="col">
+                    <label class="label">Key learning point (optional)</label>
+                    <input id="key_learning_point"
+                           class="input"
+                           type="text"
+                           placeholder="One-liner takeaway" />
+                </div>
+            </div>
+
+            <div class="btnbar">
+                <button id="createBtn" class="btn">Create</button>
+                <button id="fillDemoBtn" class="btn btn--secondary">Fill demo</button>
+                <button id="clearBtn" class="btn btn--secondary">Clear</button>
+            </div>
+
+            <div class="meta">
+                <span class="pill">
+                    Last MCQ: <span id="lastMcqId" class="mono">—</span>
+                </span>
+                <button id="copyLastBtn" class="btn btn--secondary" disabled>
+                    Copy ID
+                </button>
+            </div>
+
+            <pre id="createOut" class="out">Output will appear here…</pre>
+        </section>
+
+        <!-- ===== RIGHT: PUBLISH + PUBLIC VIEW ===== -->
+        <section class="card">
+            <div class="card__title">Publish + Public Viewer</div>
+
+            <label class="label">Publish one (by mcq_id)</label>
+            <div class="row row--tight">
+                <input id="pubOneId" class="input" type="text" placeholder="NEURO_000123" />
+                <button id="publishOneBtn" class="btn">Publish</button>
+            </div>
+
+            <div class="hint">
+                Publish requires <span class="mono">status=ready</span> in Sheets.
+            </div>
+
+            <hr class="hr" />
+
+            <label class="label">Batch publish (newest READY first)</label>
+            <div class="row">
+                <div class="col">
+                    <label class="label label--small">Limit</label>
+                    <input id="batchLimit" class="input" type="number" value="20" />
+                </div>
+
+                <div class="col">
+                    <label class="label label--small">Mode</label>
+                    <select id="batchDryRun" class="input">
+                        <option value="true">Dry run</option>
+                        <option value="false">Publish</option>
+                    </select>
+                </div>
+            </div>
+
+            <div class="row row--tight">
+                <input id="batchConfirm"
+                       class="input"
+                       type="text"
+                       placeholder='Type PUBLISH to confirm' />
+                <button id="batchBtn" class="btn btn--danger">Run batch</button>
+            </div>
+
+            <pre id="publishOut" class="out">Publish output will appear here…</pre>
+
+            <hr class="hr" />
+
+            <div class="row">
+                <div class="col">
+                    <label class="label">Public list limit</label>
+                    <input id="pubLimit" class="input" type="number" value="20" />
+                </div>
+
+                <div class="col">
+                    <label class="label">Start After</label>
+                    <input id="pubOffset" class="input" type="number" value="0" />
+                </div>
+            </div>
+
+            <div class="btnbar">
+                <button id="refreshListBtn" class="btn btn--secondary">Refresh list</button>
+                <button id="prevPageBtn" class="btn btn--secondary">Prev</button>
+                <button id="nextPageBtn" class="btn btn--secondary">Next</button>
+            </div>
+
+            <label class="label">Fetch one (public)</label>
+            <div class="row row--tight">
+                <input id="pubFetchId" class="input" type="text" />
+                <button id="fetchOneBtn" class="btn btn--secondary">Fetch</button>
+            </div>
+
+            <!-- Card-based preview target -->
+            <div id="listWrap"></div>
+
+            <!-- Raw JSON fallback / debug -->
+            <pre id="publicOut" class="out">Public output will appear here…</pre>
+        </section>
+    </main>
+
+    <!-- ================= SCRIPTS ================= -->
+ 
+    <script src="https://cdn.benchtobedsideneuro.com/assets/js/admin-config.js"></script>
+    <script src="https://cdn.benchtobedsideneuro.com/assets/js/admin.js"></script>
+
+</body>
+</html>

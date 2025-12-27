@@ -1,0 +1,571 @@
+﻿@import url("https://fonts.googleapis.com/css?family=Fjalla+One");
+@import url("https://fonts.googleapis.com/css?family=Roboto+Slab");
+@import url("https://fonts.googleapis.com/css2?family=Cinzel+Decorative:wght@400;700;900&display=swap");
+/* styles.css */
+
+@font-face {
+    font-family: Cinzel Decorative;
+    font-style: normal;
+    font-weight: 400;
+    src: url(/cf-fonts/s/cinzel-decorative/5.0.18/latin/400/normal.woff2);
+    unicode-range: U+0000-00FF, U+0131, U+0152-0153, U+02BB-02BC, U+02C6, U+02DA, U+02DC, U+0304, U+0308, U+0329, U+2000-206F, U+2074, U+20AC, U+2122, U+2191, U+2193, U+2212, U+2215, U+FEFF, U+FFFD;
+    font-display: swap;
+}
+
+@font-face {
+    font-family: Cinzel Decorative;
+    font-style: normal;
+    font-weight: 700;
+    src: url(/cf-fonts/s/cinzel-decorative/5.0.18/latin/700/normal.woff2);
+    unicode-range: U+0000-00FF, U+0131, U+0152-0153, U+02BB-02BC, U+02C6, U+02DA, U+02DC, U+0304, U+0308, U+0329, U+2000-206F, U+2074, U+20AC, U+2122, U+2191, U+2193, U+2212, U+2215, U+FEFF, U+FFFD;
+    font-display: swap;
+}
+
+@font-face {
+    font-family: Cinzel Decorative;
+    font-style: normal;
+    font-weight: 900;
+    src: url(/cf-fonts/s/cinzel-decorative/5.0.18/latin/900/normal.woff2);
+    unicode-range: U+0000-00FF, U+0131, U+0152-0153, U+02BB-02BC, U+02C6, U+02DA, U+02DC, U+0304, U+0308, U+0329, U+2000-206F, U+2074, U+20AC, U+2122, U+2191, U+2193, U+2212, U+2215, U+FEFF, U+FFFD;
+    font-display: swap;
+}
+
+
+html {
+    scroll-padding-top: var(--navbar-height, 80px); /* Adjust for the navbar height */
+}
+/* General Reset & Base */
+*, *::before, *::after {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+
+a {
+    border-bottom: none !important;
+}
+
+:root {
+    /* Color Variables */
+    --background-light: #333;
+    --background-dark: #202024;
+    --text-light: #fff;
+    --text-secondary: floralwhite;
+    --accent: #b71c1c;
+    --border-color: #dcdfe6;
+    --shadow-color: rgba(0, 0, 0, 0.1);
+    --hover-shadow-color: rgba(0, 0, 0, 0.2);
+    /* Gradients & Additional Colors */
+    --accent-gradient: linear-gradient(270deg, #b71c1c, #ff0000);
+    --primary-red: #b71c1c;
+    --secondary-red: #ee1c25;
+    --light-red: #cd0606;
+    --gradient-red: linear-gradient(270deg, #b71c1c, #ff0000);
+    --dark-blue: #022c3b;
+    /* Status Colors */
+    --success-color: #d4edda;
+    --success-border: #c3e6cb;
+    --error-color: #f8d7da;
+    --error-border: #f5c6cb;
+    /* Layout Variables */
+    --navbar-height: 80px;
+}
+
+
+
+
+body {
+    font-family: 'Helvetica Neue', Helvetica, Roboto, sans-serif;
+    line-height: 1.6;
+    background-color: #202024 !important;
+    color: var(--text-light);
+    overflow-x: hidden;
+    transition: all 0.3s ease-in-out, padding-top 0.3s ease-in-out;
+    padding-top: var(--navbar-height);
+}
+    /* Subheader (Large Screens Only) */
+.subheader {
+    font-family: 'Helvetica Neue', Helvetica, Roboto, sans-serif;
+    display: flex !important;
+    overflow-x: auto;
+    overflow-y: hidden;
+    white-space: nowrap;
+    gap: 6px;
+    position: fixed;
+    width: 100%;
+    background-color: #f1e6cb; /* Soft pastel background */
+    backdrop-filter: blur(10px);
+    box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+    z-index: 998;
+    transition: transform 0.3s ease, background-color 0.3s ease, color 0.3s ease;
+    justify-content: space-between;
+    padding-bottom: 5px;
+}
+
+
+
+    .subheader.hidden {
+        transform: translateY(-100%);
+    }
+
+    /* Subheader Nav Links */
+    .subheader .navbar-nav {
+        gap: 20px; /* Space between nav items */
+    }
+
+    .subheader .nav-link {
+        font-weight: 500;
+        font-size: 1rem; /* Readable font size */
+        text-transform: uppercase !important;
+        padding: 0.5rem 1rem;
+        transition: color 0.3s ease, transform 0.3s ease;
+    }
+
+        .subheader .nav-link:hover {
+            color: #fff;
+            border-radius: 5px;
+            transform: translateY(-2px); /* Subtle hover effect */
+        }
+
+
+        /* Active Link Styling */
+        .subheader .nav-link.active {
+            color: #fff;
+            border-radius: 5px;
+            font-weight: bold;
+        }
+
+
+#subheader .nav-link::after {
+    content: '';
+    position: absolute;
+    bottom: -5px; /* Position underline slightly below the link */
+    left: 50%;
+    width: 0;
+    height: 3px; /* Thickness of the underline */
+    background-color: #a6301d; /* Color of the underline */
+    transform: translateX(-50%);
+    transition: all 0.3s ease-in-out;
+}
+
+#subheader .nav-link:hover::after {
+    width: 100%; /* Expand underline */
+    left: 0; /* Align underline to the left */
+    transform: none; /* Remove centering transformation */
+}
+
+
+/* Hide Subheader on Small Screens */
+@media (max-width: 991.98px) {
+    .subheader {
+        display: none !important;
+    }
+}
+
+
+
+
+
+@media (max-width: 991.98px) {
+    .subheader {
+        display: none !important;
+    }
+}
+
+.subheader .navbar-nav .nav-link {
+    font-weight: bold;
+    color: #000;
+    padding: 0.5rem 1rem;
+}
+
+
+
+/* Navbar */
+.navbar {
+    position: fixed;
+    top: 0;
+    width: 100%;
+    height: var(--navbar-height, 80px); /* Default height */
+    background-color: #333 !important;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 0 20px;
+    z-index: 999;
+    box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+    transition: height 0.3s ease; /* Smooth resizing */
+    --bs-navbar-brand-color: rgb(0 0 0 / 0%);
+    --bs-navbar-brand-hover-color: rgb(0 0 0 / 0%);
+}
+
+
+.navbar-brand {
+    display: flex;
+}
+
+.navbar .container {
+    width: 100%; /* Full width of the navbar */
+    max-width: 100%; /* Remove any default width restrictions */
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    gap: 1rem; /* Optional: Adjust spacing between elements */
+    padding: 0 20px; /* Add padding for spacing */
+}
+
+/* Navbar Logo */
+.navbar-logo {
+    flex: 0; /* Prevent stretching */
+    text-align: left;
+    margin-right: auto; /* Push dynamic links to the right */
+    font-family: 'Cinzel Decorative', serif;
+    font-size: 2rem; /* Default font size */
+    background: #ffff;
+    -webkit-background-clip: text;
+    -webkit-text-fill-color: transparent;
+    letter-spacing: 1px;
+    font-weight: bold;
+    margin: 0;
+    white-space: nowrap; /* Prevent wrapping */
+    transition: font-size 0.3s ease-in-out; /* Smooth resizing */
+}
+
+
+.navbar-dynamic-links {
+    display: flex;
+    justify-content: space-evenly; /* Center links in their space */
+    align-items: center;
+    flex: 1; /* Take up space between logo and YouTube SVG */
+    gap: 1rem; /* Add spacing between links */
+}
+
+
+.navbar-dynamic-links .nav-link {
+    font-size: 20px;
+    font-weight: 400;
+    color: whitesmoke;
+    text-transform: uppercase;
+    font-family: 'Times New Roman', Times, serif;
+}
+
+.navbar-link-separator {
+    color: #ccc; /* Adjust the color to fit your design */
+    font-size: 1rem; /* Match the font size of your links */
+    vertical-align: middle;
+}
+
+
+
+
+.youtube-logo {
+    flex: 0; /* Prevent stretching */
+    text-align: right; /* Align to the right */
+    margin-left: auto; /* Push dynamic links to the left */
+    text-decoration: none;
+    filter:sepia(100);
+}
+
+    /* YouTube Logo Button */
+    .youtube-logo img {
+        width: 130px;
+        height: 30px;
+        margin-right: 20px;
+        transition: all .25s ease-in-out;
+        text-decoration: none;
+   
+    }
+    .youtube-logo:hover {
+        filter: none;
+    }
+    .youtube-logo:hover img {
+        filter: none;
+        opacity: 1;
+        
+        transform: scale(1.1); /* Slight zoom effect */
+    }
+
+   
+
+
+/* Navbar Toggler */
+.navbar-toggler {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    width: 40px; /* Default size */
+    height: 40px;
+    background-color:white !important;
+    padding: 0 !important;
+    transition: width 0.3s ease, height 0.3s ease; /* Smooth resizing */
+}
+
+/* Navbar Toggler Icon */
+.navbar-toggler-icon {
+    width: 100%;
+    height: 100%;
+    background-size: 60% 60%; /* Proportional scaling */
+    background-position: center;
+    background-repeat: no-repeat;
+}
+
+@media (max-width: 1465px) {
+    .navbar-dynamic-link .navbar-link-separator {
+        display: none !important;
+    }
+}
+
+
+@media (max-width: 1465px) {
+    .navbar-dynamic-links {
+        display: none !important;
+    }
+}
+
+
+
+/* Responsive Adjustments */
+    @media (max-width: 992px) {
+    .navbar {
+        height: 70px !important;
+    }
+
+    .navbar-logo {
+        font-size: 1.8rem !important;
+    }
+
+    .navbar-toggler {
+        width: 35px !important;
+        height: 35px !important;
+    }
+
+    .youtube-logo img {
+        display: none !important;
+    }
+}
+    @media (max-width: 768px) {
+        .navbar {
+            height: 60px !important; /* Reduced navbar height */
+        }
+
+        .navbar-logo {
+            font-size: 30px !important;
+        }
+
+        .navbar-toggler {
+            width: 30px !important;
+            height: 30px !important;
+        }
+
+        .youtube-logo img {
+            display: none !important;
+        }
+
+        .navbar .container {
+            gap: 0 !important;
+            padding: 0 !important;
+        }
+    }
+
+    @media (max-width: 416px) {
+        .navbar-logo {
+            font-size: 14px !important;
+        }
+
+        .navbar .container {
+            gap: 0 !important;
+            padding: 0 !important;
+        }
+
+        .navbar-toggler-icon {
+            width: 25px;
+            height: 25px;
+        }
+    }
+
+    @media (max-width: 300px) {
+        .navbar-logo {
+            font-size: 11px !important;
+        }
+
+        .navbar .container {
+            gap: 0 !important;
+            padding: 0 !important;
+        }
+
+        .navbar-toggler-icon {
+            width: 25px;
+            height: 25px;
+        }
+    }
+
+    @media (max-width: 576px) {
+    .navbar {
+        height: 50px; /* Minimum navbar height */
+    }
+
+    .navbar-logo {
+        font-size: 16px !important; /* Minimum font size */
+    }
+
+    .navbar-toggler {
+        width: 25px !important;
+        height: 25px !important;
+    }
+
+    .youtube-logo img {
+        display: none !important;
+    }
+
+    .navbar .container {
+        gap: 0 !important;
+        padding: 0 !important;
+    }
+}
+
+    /* Offcanvas Styling */
+    .offcanvas {
+        width: 75% !important; /* Set the width to 75% of the screen */
+        max-width: 75% !important; /* Ensure it doesn't exceed 75% of the screen width */
+        transition: transform 0.3s ease-in-out; /* Smooth open/close transition */
+    }
+
+    /* Optional: Add some padding for content inside */
+    .offcanvas-body {
+        padding: 15px;
+    }
+
+    /* Responsive Adjustment */
+    @media (max-width: 576px) { /* For very small screens */
+        .offcanvas {
+            width: 90% !important; /* Allow more space on small screens */
+            max-width: 90% !important; /* Adjust max width */
+        }
+    }
+
+    
+
+    /* Offcanvas Menu */
+    .offcanvas-menu {
+        position: fixed;
+        top: 0;
+        right: -300px;
+        width: 300px;
+        height: 100%;
+        background-color: #ffffff;
+        transition: right 0.3s ease;
+        box-shadow: -2px 0 5px rgba(0, 0, 0, 0.5);
+        z-index: 1050;
+    }
+
+        .offcanvas-menu.open {
+            right: 0;
+        }
+
+        .offcanvas-menu ul {
+            list-style: none;
+            padding: 0;
+            margin: 0;
+        }
+
+            .offcanvas-menu ul li {
+                border-bottom: 1px solid #ddd;
+                padding: 15px;
+                text-align: center;
+            }
+
+                .offcanvas-menu ul li a {
+                    text-decoration: none;
+                    color: #000;
+                    font-weight: bold;
+                }
+
+    /* Offcanvas Links Styling (If Using Bootstrap's Offcanvas) */
+    .offcanvas-body .navbar-nav .nav-item {
+        padding: 15px 0;
+        border-bottom: 1px solid #ddd; /* Line separating links */
+    }
+
+    .offcanvas-body .navbar-nav .nav-link {
+        color: #000;
+        font-weight: bold;
+        text-decoration: none;
+        transition: color 0.3s ease;
+    }
+
+    .offcanvas-body {
+        --font-size: 1rem; /* Adjustable font size */
+        --alignment: center; /* Adjustable alignment */
+
+        font-size: var(--font-size);
+        text-align: var(--alignment);
+    }
+
+        .offcanvas-body .nav-link:hover {
+            color: #b71c1c; /* Red on hover */
+        }
+
+
+    /* Responsive Adjustments for Smaller Screens */
+    @media (max-width: 992px) {
+        .nav-links.active {
+            display: flex !important;
+            flex-direction: column;
+            align-items: center;
+            position: absolute;
+            top: 60px; /* Adjust based on navbar height */
+            left: 0;
+            background-color: white;
+            width: 100%;
+            padding: 10px 0;
+            z-index: 1030;
+        }
+
+        .youtube-logo img {
+            display: none !important;
+        }
+    }
+/* Footer */
+footer {
+    color: floralwhite;
+    padding: 20px !important;
+    background: #333 !important;
+    display: flex !important;
+    justify-content: space-between;
+    align-items: center;
+    flex-wrap: wrap;
+    font-family: 'Helvetica Neue', Helvetica, Roboto, sans-serif;
+    line-height: 1.6;
+}
+
+    footer .footer-content {
+        display: flex;
+        align-items: center;
+        flex-wrap: wrap;
+    }
+
+        footer .footer-content a {
+            color: floralwhite;
+            margin-right: 15px;
+            text-decoration: none;
+            transition: color 0.3s ease;
+        }
+
+           
+    footer .social-icons a {
+        color: floralwhite;
+        font-size: 24px;
+        margin: 0 10px;
+        transition: color 0.3s ease, transform 0.3s ease;
+    }
+
+        footer .social-icons a:hover {
+           color: crimson !important;
+            transform: scale(1.1);
+            transition: 0.2s ease-in;
+        }
+
+       footer i:hover {
+           color: crimson !important;
+           transition: 0.2s ease-in;
+        }

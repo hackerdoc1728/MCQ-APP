@@ -1,0 +1,369 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no">
+    <meta charset="UTF-8">
+    <meta name="description" content="Bench to Bedside Neuro - Clinical Updates, Physician Training, and Patient Education">
+    <meta name="keywords" content="neurology, clinical updates, physician training, patient education">
+    <link rel="canonical" href="https://benchtobedsideneuro.com/about.html">
+    <meta name="author" content="Your Name">
+    <title>Bench to Bedside Neuro</title>
+
+    <!-- Favicon -->
+    <!-- Apple Touch Icon -->
+    <link rel="apple-touch-icon" sizes="180x180"
+          href="<%= assetBaseUrl %>/assets/images/favicon/apple-touch-icon.png">
+
+    <!-- Favicon 32x32 -->
+    <link rel="icon" type="image/png" sizes="32x32"
+          href="<%= assetBaseUrl %>/assets/images/favicon/favicon-32x32.png">
+
+    <!-- Favicon 16x16 -->
+    <link rel="icon" type="image/png" sizes="16x16"
+          href="<%= assetBaseUrl %>/assets/images/favicon/favicon-16x16.png">
+
+    <!-- Manifest -->
+    <link rel="manifest" href="<%= assetBaseUrl %>/assets/images/favicon/site.webmanifest">
+
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+
+    <!-- Font Awesome CDN -->
+    <link rel="stylesheet"
+          href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css"
+          integrity="sha512-iecdLmaskl7CVkqkXNQ/ZH/XLlvWZOJyj7Yy7tcenmpD1ypASozpmT/E0iPtmFIB46ZmdtAc9eNBvH0H/ZpiBw=="
+          crossorigin="anonymous"
+          referrerpolicy="no-referrer" />
+
+    <!-- Boxicons CDN -->
+    <link href='https://unpkg.com/boxicons@2.1.4/css/boxicons.min.css' rel='stylesheet'>
+
+    <link rel="preload"
+          href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/css/bootstrap.min.css"
+          as="style">
+
+    <!-- Bootstrap CSS -->
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/css/bootstrap.min.css"
+          rel="stylesheet">
+
+    <!-- Custom Styles -->
+    <link rel="stylesheet" href="<%= assetBaseUrl %>/assets/css/contact.css">
+</head>
+
+<body>
+    <!-- Navbar -->
+    <nav class="navbar navbar-expand-lg navbar-light bg-white shadow-sm">
+        <div class="container d-flex justify-content-between align-items-center">
+            <a class="navbar-brand" href="https://benchtobedsideneuro.com">
+                <h1 class="mb-0 navbar-logo">Bench to Bedside Neuro</h1>
+            </a>
+            <!-- YouTube Subscribe Button with SVG -->
+            <a href="https://www.youtube.com/@DRNIRUMALKHUMAR"
+               class="youtube-logo d-flex align-items-center justify-content-center"
+               target="_blank"
+               rel="noopener"
+               aria-label="Subscribe to our YouTube Channel">
+                <img src="<%= assetBaseUrl %>/assets/images/youtube.svg" alt="Subscribe to YouTube Channel">
+            </a>
+
+            <!-- Navbar Toggler (visible on small screens) -->
+            <button class="navbar-toggler ms-0" type="button" id="toggleButton"
+                    data-bs-toggle="offcanvas" data-bs-target="#offCanvasMenu"
+                    aria-controls="offCanvasMenu" aria-label="Toggle navigation">
+                <span class="navbar-toggler-icon"></span>
+            </button>
+        </div>
+    </nav>
+
+    <!-- Subheader (visible only on large screens) -->
+    <div id="subheader" class="subheader">
+        <div class="container d-flex justify-content-center align-items-center">
+            <ul class="navbar-nav flex-row justify-content-evenly w-100">
+                <li class="nav-item">
+                    <a class="nav-link" href="https://benchtobedsideneuro.com/#home" aria-label="Go to Home Section">Home</a>
+                </li>
+                <li class="nav-item">
+                    <a class="nav-link" href="https://benchtobedsideneuro.com/synapse-speaks" aria-label="Go to Synapse Speaks">Synapse Speaks</a>
+                </li>
+                <li class="nav-item">
+                    <a class="nav-link" href="https://benchtobedsideneuro.com/cortex-snapshots">Cortex Snapshots</a>
+                </li>
+                <li class="nav-item">
+                    <a class="nav-link" href="https://benchtobedsideneuro.com/neuropulse">NeuroPulse</a>
+                </li>
+                <li class="nav-item">
+                    <a class="nav-link" href="https://benchtobedsideneuro.com/musings" aria-label="Go to Blog Section">Musings</a>
+                </li>
+                <li class="nav-item">
+                    <a class="nav-link" href="https://benchtobedsideneuro.com/videos" aria-label="Go to Videos">Videos</a>
+                </li>
+                <li class="nav-item">
+                    <a class="nav-link" href="https://benchtobedsideneuro.com/mcq/?page=1" aria-label="Go to Quiz Page">Quiz</a>
+                </li>
+                <li class="nav-item">
+                    <a class="nav-link" href="https://benchtobedsideneuro.com/about" aria-label="Go to About Us Page">About Us</a>
+                </li>
+            </ul>
+        </div>
+    </div>
+
+    <div class="offcanvas offcanvas-end" tabindex="-1" id="offCanvasMenu" aria-labelledby="offCanvasMenuLabel">
+        <div class="offcanvas-header">
+            <h5 class="offcanvas-title" id="offCanvasMenuLabel">Menu</h5>
+            <button type="button" class="btn-close text-reset" data-bs-dismiss="offcanvas" aria-label="Close"></button>
+        </div>
+        <div class="offcanvas-body">
+            <ul class="navbar-nav text-center">
+                <li class="nav-item border-bottom">
+                    <a class="nav-link" href="https://benchtobedsideneuro.com/#home">Home</a>
+                </li>
+                <li class="nav-item border-bottom">
+                    <a class="nav-link" href="https://benchtobedsideneuro.com/synapse-speaks" aria-label="Go to Synapse Speaks">Synapse Speaks</a>
+                </li>
+                <li class="nav-item">
+                    <a class="nav-link" href="https://benchtobedsideneuro.com/cortex-snapshots">Cortex Snapshots</a>
+                </li>
+                <li class="nav-item">
+                    <a class="nav-link" href="https://benchtobedsideneuro.com/neuropulse">NeuroPulse</a>
+                </li>
+                <li class="nav-item border-bottom">
+                    <a class="nav-link" href="https://benchtobedsideneuro.com/musings" aria-label="Go to Blog Section">Musings</a>
+                </li>
+                <li class="nav-item border-bottom">
+                    <a class="nav-link" href="https://benchtobedsideneuro.com/videos">Videos</a>
+                </li>
+                <li class="nav-item">
+                    <a class="nav-link" href="https://benchtobedsideneuro.com/mcq/?page=1" aria-label="Go to Quiz Page">Quiz</a>
+                </li>
+                <li class="nav-item border-bottom">
+                    <a class="nav-link" href="https://benchtobedsideneuro.com/about">About Us</a>
+                </li>
+                <!-- Subscribe link also in offcanvas for small screens -->
+                <li class="nav-item">
+                    <a class="nav-link text-danger"
+                       href="https://www.youtube.com/@DRNIRUMALKHUMAR"
+                       target="_blank"
+                       rel="noopener">
+                        Subscribe
+                    </a>
+                </li>
+            </ul>
+        </div>
+    </div>
+
+    <section id="meet-team-1765">
+        <div class="cs-container">
+            <div class="cs-content">
+                <div class="cs-flex-wrapper">
+                    <div class="cs-flex">
+                        <span class="cs-topper">Who are we?</span>
+                        <div class="cs">
+                            <h2 class="cs-title">Your Trusty Neighbourhood Neuro-Nerds</h2>
+                            <cite>Bringing Neurology from the Benches to the Bedside.....</cite>
+                        </div>
+                    </div>
+
+                    <button id="scrollButton" class="shiny-cta">
+                        <span>MEET THE TEAM</span>
+                    </button>
+                </div>
+                <div class="cs-wrapper">
+                    <blockquote>
+                        Where do you go when the squigly lines dont make sense? Whom do you turn to when brain doesn't brain? What would be your one stop to quality education? <br /> Its us.
+                    </blockquote>
+                </div>
+            </div>
+
+            <section id="creators">
+                <ul class="cs-card-group">
+                    <li class="cs-item">
+                        <div class="cs-image-group">
+                            <picture class="cs-picture">
+                                <!--Mobile Image-->
+                                <source media="(max-width: 600px)" srcset="<%= assetBaseUrl %>/assets/images/placeholder.jpg">
+                                <!--Tablet and above Image-->
+                                <source media="(min-width: 601px)" srcset="<%= assetBaseUrl %>/assets/images/placeholder.jpg">
+                                <img loading="lazy"
+                                     decoding="async"
+                                     src="<%= assetBaseUrl %>/assets/images/placeholder.jpg"
+                                     alt="Michael Semple">
+                            </picture>
+                            <div class="cs-social">
+                                <a href="https://www.youtube.com/@drnirumalkhumar" class="cs-link" aria-label="YouTube" target="_blank" rel="noopener">
+                                    <i class='bx bxl-youtube cs-icon' aria-hidden="true"></i>
+                                </a>
+                                <a href="https://www.instagram.com/dr_neuro_nerd" class="cs-link" aria-label="Telegram" target="_blank" rel="noopener">
+                                    <i class='bx bxl-instagram cs-icon' aria-hidden="true"></i>
+                                </a>
+                                <a href="https://t.me/+RA69McgLY5U3NzBl" class="cs-link" aria-label="Instagram" target="_blank" rel="noopener">
+                                    <i class='bx bxl-telegram cs-icon' aria-hidden="true"></i>
+                                </a>
+                            </div>
+                        </div>
+                        <div class="cs-info">
+                            <span class="cs-name">Dr.Nirmal Kumar</span>
+                            <span class="cs-job">Neurologist</span>
+                        </div>
+                    </li>
+
+                    <li class="cs-item">
+                        <div class="cs-image-group">
+                            <picture class="cs-picture">
+                                <!--Mobile Image-->
+                                <source media="(max-width: 600px)" srcset="<%= assetBaseUrl %>/assets/images/placeholder.jpg">
+                                <!--Tablet and above Image-->
+                                <source media="(min-width: 601px)" srcset="<%= assetBaseUrl %>/assets/images/placeholder.jpg">
+                                <img loading="lazy"
+                                     decoding="async"
+                                     src="<%= assetBaseUrl %>/assets/images/placeholder.jpg"
+                                     alt="Jose Hawthorne">
+                            </picture>
+                            <div class="cs-social">
+                                <a href="https://www.youtube.com/@drnirumalkhumar" class="cs-link" aria-label="YouTube" target="_blank" rel="noopener">
+                                    <i class='bx bxl-youtube cs-icon' aria-hidden="true"></i>
+                                </a>
+                                <a href="https://www.instagram.com/dr_neuro_nerd" class="cs-link" aria-label="Telegram" target="_blank" rel="noopener">
+                                    <i class='bx bxl-instagram cs-icon' aria-hidden="true"></i>
+                                </a>
+                                <a href="https://t.me/+RA69McgLY5U3NzBl" class="cs-link" aria-label="Instagram" target="_blank" rel="noopener">
+                                    <i class='bx bxl-telegram cs-icon' aria-hidden="true"></i>
+                                </a>
+                            </div>
+                        </div>
+                        <div class="cs-info">
+                            <span class="cs-name">Dr. Ilaiyabharathi</span>
+                            <span class="cs-job">Creative Head</span>
+                        </div>
+                    </li>
+                </ul>
+            </section>
+        </div>
+    </section>
+
+    <!-- ============================================
+           Contact Section
+    ============================================ -->
+    <section id="contact-1750">
+        <div class="cs-container">
+            <div class="cs-form-group">
+                <div class="cs-content">
+                    <h2 class="cs-title">Contact Us</h2>
+                </div>
+                <!--Form-->
+                <form class="cs-form"
+                      id="cs-form-1750"
+                      name="Contact Form"
+                      action="/api/contact"
+                      method="post">
+                    <input type="hidden" name="csrfToken" value="<%= csrfToken %>">
+                    <label class="cs-label">
+                        Name *
+                        <input class="cs-input" required type="text" id="name-1750" name="name" placeholder="John Doe">
+                    </label>
+                    <label class="cs-label cs-email">
+                        Email *
+                        <input class="cs-input" required type="email" id="email-1750" name="email" placeholder="name@company.com">
+                    </label>
+                    <label class="cs-label cs-phone">
+                        Phone *
+                        <input class="cs-input" type="tel" id="phone-1750" name="phone" placeholder="+91 9876543210">
+                    </label>
+                    <label class="cs-label">
+                        Message *
+                        <textarea class="cs-input cs-textarea" required name="Message" id="message-1750" placeholder="Hello, I am interested..."></textarea>
+                    </label>
+                    <button class="cs-button-solid cs-submit" type="submit">Send Message</button>
+                </form>
+            </div>
+
+            <!--Contact Info-->
+            <div class="cs-info-group">
+                <div class="cs-info">
+                    <span class="cs-topper">Location</span>
+                    <span class="cs-detail">
+                        47/3, New Avadi Rd, Alagappa Nagar, Kilpauk,<br>
+                        Chennai, Tamil Nadu 600010
+                    </span>
+                </div>
+
+                <div class="cs-info">
+                    <span class="cs-topper">Working Hours</span>
+                    <span class="cs-detail">Monday - Saturday: 10:00 - 20:00</span>
+                    <span class="cs-detail">Sunday: Closed</span>
+                </div>
+                <div class="cs-info">
+                    <span class="cs-topper">Contact</span>
+                    <span class="cs-detail">M: +99 40 70 929</span>
+                    <span class="cs-detail">E: info@stitchgym.com</span>
+                </div>
+            </div>
+        </div>
+
+        <div class="cs-picture-group">
+            <!-- Google Maps iframe stays as-is (external) -->
+            <iframe class="cs-iframe"
+                    src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3886.329532049391!2d80.23110701258392!3d13.078289687193829!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x3a52667fb51df4c1%3A0xda54eb8cae181334!2sLifeline%20Multispeciality%20Hospital%20-%20Kilpauk%20Chennai!5e0!3m2!1sen!2sin!4v1737570917077!5m2!1sen!2sin"
+                    allowfullscreen=""
+                    loading="lazy"
+                    referrerpolicy="no-referrer-when-downgrade"></iframe>
+
+            <!-- Decorative graphics (external CDN) -->
+            <img class="cs-graphic cs-left cs-light"
+                 src="https://csimg.nyc3.cdn.digitaloceanspaces.com/Images/Graphics/gym-hero-shape-top-light.svg"
+                 alt="graphic"
+                 height="161"
+                 width="1920"
+                 loading="lazy"
+                 decoding="async">
+            <img class="cs-graphic cs-bottom cs-light"
+                 src="https://csimg.nyc3.cdn.digitaloceanspaces.com/Images/Graphics/gym-hero-shape-top-light.svg"
+                 alt="graphic"
+                 height="161"
+                 width="1920"
+                 loading="lazy"
+                 decoding="async">
+
+            <img class="cs-graphic cs-left cs-dark"
+                 src="https://csimg.nyc3.cdn.digitaloceanspaces.com/Images/Graphics/gym-hero-shape-top-dark.svg"
+                 alt="graphic"
+                 height="161"
+                 width="1920"
+                 loading="lazy"
+                 decoding="async">
+            <img class="cs-graphic cs-bottom cs-dark"
+                 src="https://csimg.nyc3.cdn.digitaloceanspaces.com/Images/Graphics/gym-hero-shape-top-dark.svg"
+                 alt="graphic"
+                 height="161"
+                 width="1920"
+                 loading="lazy"
+                 decoding="async">
+        </div>
+    </section>
+
+    <!-- Footer -->
+    <footer class="py-3">
+        <div class="container text-center">
+            <p class="mb-0">&copy; 2024 Bench to Bedside Neuro. All rights reserved.</p>
+            <!-- Instagram Link -->
+            <div class="social-icons mt-2">
+                <a href="https://www.instagram.com/dr_neuro_nerd"
+                   target="_blank"
+                   aria-label="Instagram">
+                    <i class="fab fa-instagram social-icon"></i>
+                </a>
+            </div>
+        </div>
+    </footer>
+
+    <!-- Bootstrap JS Bundle with Popper -->
+    <script crossorigin="anonymous"
+            src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/js/bootstrap.bundle.min.js"></script>
+    <script crossorigin="anonymous" type="module" defer
+            src="<%= assetBaseUrl %>/assets/js/scripts.js"></script>
+    <script crossorigin="anonymous" defer
+            src="<%= assetBaseUrl %>/assets/js/contact.js"></script>
+    <script crossorigin="anonymous" defer
+            src="<%= assetBaseUrl %>/assets/js/messages.js"></script>
+
+</body>
+</html>

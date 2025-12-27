@@ -1,0 +1,375 @@
+﻿<!DOCTYPE HTML>
+<html>
+<head>
+    <meta charset="utf-8" />
+    <base href="/" />
+    <meta name="viewport" content="width=device-width, initial-scale=1, user-scalable=no" />
+
+    <!-- Icons -->
+    <link rel="apple-touch-icon" sizes="180x180" href="<%= assetBaseUrl %>/assets/images/favicon/apple-touch-icon.png">
+    <link rel="icon" type="image/png" sizes="32x32" href="<%= assetBaseUrl %>/assets/images/favicon/favicon-32x32.png">
+    <link rel="icon" type="image/png" sizes="16x16" href="<%= assetBaseUrl %>/assets/images/favicon/favicon-16x16.png">
+    <link rel="manifest" href="<%= assetBaseUrl %>/assets/images/favicon/site.webmanifest">
+
+    <!-- FontAwesome -->
+    <link rel="stylesheet"
+          href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css">
+
+    <!-- Bootstrap -->
+    <link rel="preload"
+          href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/css/bootstrap.min.css"
+          as="style">
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/css/bootstrap.min.css"
+          rel="stylesheet">
+
+    <noscript><link rel="stylesheet" href="<%= assetBaseUrl %>/assets/css/noscript.css" /></noscript>
+    <link rel="stylesheet" href="<%= assetBaseUrl %>/assets/css/synapse-speaks.css" />
+</head>
+<body class="is-preload">
+
+    <!-- Navbar -->
+    <nav class="navbar navbar-expand-lg navbar-light bg-white shadow-sm">
+        <div class="container d-flex justify-content-between align-items-center">
+            <a class="navbar-brand" href="https://benchtobedsideneuro.com">
+                <h1 class="mb-0 navbar-logo">Bench to Bedside Neuro</h1>
+            </a>
+
+            <a href="https://www.youtube.com/@DRNIRUMALKHUMAR"
+               class="youtube-logo d-flex align-items-center justify-content-center"
+               target="_blank"
+               rel="noopener"
+               aria-label="Subscribe to our YouTube Channel">
+                <img src="<%= assetBaseUrl %>/assets/images/youtube.svg" alt="Subscribe to YouTube Channel">
+            </a>
+
+            <button class="navbar-toggler ms-0"
+                    type="button"
+                    id="toggleButton"
+                    data-bs-toggle="offcanvas"
+                    data-bs-target="#offCanvasMenu"
+                    aria-controls="offCanvasMenu"
+                    aria-label="Toggle navigation">
+                <span class="navbar-toggler-icon"></span>
+            </button>
+        </div>
+    </nav>
+
+    <!-- Subheader -->
+    <div id="subheader" class="subheader">
+        <div class="container d-flex justify-content-center align-items-center">
+            <ul class="navbar-nav flex-row justify-content-evenly w-100">
+                <li class="nav-item">
+                    <a class="nav-link" href="https://benchtobedsideneuro.com/#home">Home</a>
+                </li>
+                <li class="nav-item">
+                    <a class="nav-link" href="https://benchtobedsideneuro.com/synapse-speaks">Synapse Speaks</a>
+                </li>
+                <li class="nav-item">
+                    <a class="nav-link" href="https://benchtobedsideneuro.com/cortex-snapshots">Cortex Snapshots</a>
+                </li>
+                <li class="nav-item">
+                    <a class="nav-link" href="https://benchtobedsideneuro.com/neuropulse">NeuroPulse</a>
+                </li>
+                <li class="nav-item">
+                    <a class="nav-link" href="https://benchtobedsideneuro.com/musings">Musings</a>
+                </li>
+                <li class="nav-item">
+                    <a class="nav-link" href="https://benchtobedsideneuro.com/videos">Videos</a>
+                </li>
+                <li class="nav-item">
+                    <a class="nav-link" href="https://benchtobedsideneuro.com/mcq/?page=1">Quiz</a>
+                </li>
+                <li class="nav-item">
+                    <a class="nav-link" href="https://benchtobedsideneuro.com/about">About Us</a>
+                </li>
+            </ul>
+        </div>
+    </div>
+
+    <!-- Offcanvas -->
+    <div class="offcanvas offcanvas-end"
+         tabindex="-1"
+         id="offCanvasMenu"
+         aria-labelledby="offCanvasMenuLabel">
+        <div class="offcanvas-header">
+            <h5 class="offcanvas-title" id="offCanvasMenuLabel">Menu</h5>
+            <button type="button"
+                    class="btn-close text-reset"
+                    data-bs-dismiss="offcanvas"
+                    aria-label="Close"></button>
+        </div>
+        <div class="offcanvas-body">
+            <ul class="navbar-nav text-center">
+                <li class="nav-item border-bottom">
+                    <a class="nav-link" href="https://benchtobedsideneuro.com/#home">Home</a>
+                </li>
+                <li class="nav-item border-bottom">
+                    <a class="nav-link" href="https://benchtobedsideneuro.com/synapse-speaks">Synapse Speaks</a>
+                </li>
+                <li class="nav-item border-bottom">
+                    <a class="nav-link" href="https://benchtobedsideneuro.com/cortex-snapshots">Cortex Snapshots</a>
+                </li>
+                <li class="nav-item border-bottom">
+                    <a class="nav-link" href="https://benchtobedsideneuro.com/neuropulse">NeuroPulse</a>
+                </li>
+                <li class="nav-item border-bottom">
+                    <a class="nav-link" href="https://benchtobedsideneuro.com/musings">Musings</a>
+                </li>
+                <li class="nav-item border-bottom">
+                    <a class="nav-link" href="https://benchtobedsideneuro.com/videos">Videos</a>
+                </li>
+                <li class="nav-item border-bottom">
+                    <a class="nav-link" href="https://benchtobedsideneuro.com/mcq/?page=1">Quiz</a>
+                </li>
+                <li class="nav-item border-bottom">
+                    <a class="nav-link" href="https://benchtobedsideneuro.com/about">About Us</a>
+                </li>
+                <li class="nav-item">
+                    <a class="nav-link text-danger"
+                       href="https://www.youtube.com/@DRNIRUMALKHUMAR"
+                       target="_blank"
+                       rel="noopener">
+                        Subscribe
+                    </a>
+                </li>
+            </ul>
+        </div>
+    </div>
+
+    <!-- Wrapper -->
+    <div id="wrapper" class="fade-in">
+
+        <% const hasFeatured = featured && featured.length > 0; %>
+        <% const featuredPost = hasFeatured ? featured[0] : null; %>
+
+        <% if (page === 1) { %>
+            <!-- Intro -->
+            <div id="intro">
+                <h1><%= sectionTitle || 'NeuroPulse' %></h1>
+                <p>
+                    <%= sectionSubtitle || 'A curated stream of the latest shifts, trials, and trends in neurology.' %>
+                </p>
+                <ul class="actions">
+                    <li>
+                        <a href="#header"
+                           class="button icon solid solo fa-arrow-down scrolly">
+                            Continue
+                        </a>
+                    </li>
+                </ul>
+            </div>
+        <% } %>
+
+        <!-- Header -->
+        <header id="header">
+            <a href="/neuropulse" class="logo">
+                <%= sectionTitle || 'NeuroPulse' %>
+            </a>
+        </header>
+
+        <!-- Main -->
+        <div id="main">
+
+            <% if (featuredPost) { %>
+                <article class="post featured">
+                    <header class="major">
+                        <span class="date">
+                            <%= new Date(featuredPost.date).toLocaleDateString('en-US', {
+                                month: 'long',
+                                day: 'numeric',
+                                year: 'numeric'
+                            }) %>
+                        </span>
+                        <h2>
+                            <a href="<%= featuredPost.filePath %>">
+                                <%= featuredPost.title %>
+                            </a>
+                        </h2>
+                        <p><%= featuredPost.subtitle %></p>
+                        <p><%= featuredPost.description %></p>
+                    </header>
+                    <a href="<%= featuredPost.filePath %>" class="image main">
+                        <img src="<%= assetBaseUrl %><%= featuredPost.blogimage %>" alt="<%= featuredPost.title %>" />
+                    </a>
+                    <ul class="actions special">
+                        <li>
+                            <a href="<%= featuredPost.filePath %>" class="button large">
+                                Read Update
+                            </a>
+                        </li>
+                    </ul>
+                </article>
+            <% } %>
+
+            <!-- Regular Posts -->
+            <section class="posts">
+                <% posts.forEach(post => { %>
+                    <article>
+                        <header>
+                            <span class="date">
+                                <%= new Date(post.date).toLocaleDateString('en-US', {
+                                    month: 'long',
+                                    day: 'numeric',
+                                    year: 'numeric'
+                                }) %>
+                            </span>
+                            <h2>
+                                <a href="<%= post.filePath %>">
+                                    <%= post.title %>
+                                </a>
+                            </h2>
+                            <p><%= post.subtitle %></p>
+                            <p><%= post.description %></p>
+                        </header>
+                        <a href="<%= post.filePath %>" class="image fit">
+                            <img src="<%= assetBaseUrl %><%= post.blogimage %>" alt="<%= post.title %>" />
+                        </a>
+                        <ul class="actions special">
+                            <li>
+                                <a href="<%= post.filePath %>" class="button large">
+                                    Read Update
+                                </a>
+                            </li>
+                        </ul>
+                    </article>
+                <% }); %>
+            </section>
+
+            <!-- Pagination -->
+            <nav class="pagination" aria-label="NeuroPulse Pagination">
+                <ul>
+                    <% if (page > 1) { %>
+                        <li>
+                            <a href="/neuropulse?page=<%= page - 1 %>"
+                               class="previous"
+                               aria-label="Previous Page">
+                                Prev
+                            </a>
+                        </li>
+                    <% } else { %>
+                        <li class="disabled" aria-disabled="true">
+                            <span class="previous">Prev</span>
+                        </li>
+                    <% } %>
+
+                    <% if (totalPages <= 10) { %>
+                        <% for (let i = 1; i <= totalPages; i++) { %>
+                            <li>
+                                <% if (i === page) { %>
+                                    <a href="/neuropulse?page=<%= i %>"
+                                       class="page active"
+                                       aria-current="page">
+                                        <%= i %>
+                                    </a>
+                                <% } else { %>
+                                    <a href="/neuropulse?page=<%= i %>" class="page">
+                                        <%= i %>
+                                    </a>
+                                <% } %>
+                            </li>
+                        <% } %>
+                    <% } else { %>
+                        <% if (page <= 4) { %>
+                            <% for (let i = 1; i <= 5; i++) { %>
+                                <li>
+                                    <% if (i === page) { %>
+                                        <a href="/neuropulse?page=<%= i %>"
+                                           class="page active"
+                                           aria-current="page">
+                                            <%= i %>
+                                        </a>
+                                    <% } else { %>
+                                        <a href="/neuropulse?page=<%= i %>" class="page">
+                                            <%= i %>
+                                        </a>
+                                    <% } %>
+                                </li>
+                            <% } %>
+                            <li class="disabled"><span class="extra">&hellip;</span></li>
+                            <% for (let i = totalPages - 2; i <= totalPages; i++) { %>
+                                <li><a href="/neuropulse?page=<%= i %>" class="page"><%= i %></a></li>
+                            <% } %>
+                        <% } else if (page > totalPages - 4) { %>
+                            <li><a href="/neuropulse?page=1" class="page">1</a></li>
+                            <li><a href="/neuropulse?page=2" class="page">2</a></li>
+                            <li class="disabled"><span class="extra">&hellip;</span></li>
+                            <% for (let i = totalPages - 4; i <= totalPages; i++) { %>
+                                <li>
+                                    <% if (i === page) { %>
+                                        <a href="/neuropulse?page=<%= i %>"
+                                           class="page active"
+                                           aria-current="page">
+                                            <%= i %>
+                                        </a>
+                                    <% } else { %>
+                                        <a href="/neuropulse?page=<%= i %>" class="page">
+                                            <%= i %>
+                                        </a>
+                                    <% } %>
+                                </li>
+                            <% } %>
+                        <% } else { %>
+                            <li><a href="/neuropulse?page=1" class="page">1</a></li>
+                            <li><a href="/neuropulse?page=2" class="page">2</a></li>
+                            <li class="disabled"><span class="extra">&hellip;</span></li>
+
+                            <li><a href="/neuropulse?page=<%= page - 1 %>" class="page"><%= page - 1 %></a></li>
+                            <li>
+                                <a href="/neuropulse?page=<%= page %>"
+                                   class="page active"
+                                   aria-current="page">
+                                    <%= page %>
+                                </a>
+                            </li>
+                            <li><a href="/neuropulse?page=<%= page + 1 %>" class="page"><%= page + 1 %></a></li>
+
+                            <li class="disabled"><span class="extra">&hellip;</span></li>
+                            <li><a href="/neuropulse?page=<%= totalPages - 1 %>" class="page"><%= totalPages - 1 %></a></li>
+                            <li><a href="/neuropulse?page=<%= totalPages %>" class="page"><%= totalPages %></a></li>
+                        <% } %>
+                    <% } %>
+
+                    <% if (page < totalPages) { %>
+                        <li>
+                            <a href="/neuropulse?page=<%= page + 1 %>"
+                               class="next"
+                               aria-label="Next Page">
+                                Next
+                            </a>
+                        </li>
+                    <% } else { %>
+                        <li class="disabled" aria-disabled="true">
+                            <span class="next">Next</span>
+                        </li>
+                    <% } %>
+                </ul>
+            </nav>
+
+            <!-- Footer -->
+            <footer class="py-3">
+                <div class="container text-center">
+                    <p class="mb-0">&copy; 2024 Bench to Bedside Neuro. All rights reserved.</p>
+                    <div class="social-icons mt-2">
+                        <a href="https://www.instagram.com/dr_neuro_nerd"
+                           target="_blank"
+                           aria-label="Instagram">
+                            <i class="fab fa-instagram social-icon"></i>
+                        </a>
+                    </div>
+                </div>
+            </footer>
+        </div>
+
+    <!-- Scripts -->
+    <script crossorigin="anonymous"
+            src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/js/bootstrap.bundle.min.js"></script>
+    <script crossorigin="anonymous" type="module" src="<%= assetBaseUrl %>/assets/js/scripts.js"></script>
+    <script crossorigin="anonymous" src="<%= assetBaseUrl %>/assets/js/jquery.min.js"></script>
+    <script crossorigin="anonymous" src="<%= assetBaseUrl %>/assets/js/jquery.scrollex.min.js"></script>
+    <script crossorigin="anonymous" src="<%= assetBaseUrl %>/assets/js/jquery.scrolly.min.js"></script>
+    <script crossorigin="anonymous" src="<%= assetBaseUrl %>/assets/js/browser.min.js"></script>
+    <script crossorigin="anonymous" src="<%= assetBaseUrl %>/assets/js/breakpoints.min.js"></script>
+    <script src="<%= assetBaseUrl %>/assets/js/main.js"></script>
+
+</body>
+</html>
